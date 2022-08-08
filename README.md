@@ -17,9 +17,9 @@
 
 # API 
 
--https://wft-geo-db.p.rapidapi.com/v1/geo/countries
+- https://wft-geo-db.p.rapidapi.com/v1/geo/countries
 
--https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US.
+- https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US.
 
 # Simulator's View
 ![List and Home Screen](https://user-images.githubusercontent.com/67964948/183467647-7cef838b-d171-4b8d-8176-9e5e3786de80.png)
