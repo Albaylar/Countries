@@ -21,7 +21,7 @@ struct DetailView: View {
       } else {
         ScrollView{
           if let BeforeDetail = countryDetails?.data {
-              VStack(alignment: .leading, spacing: 25) {
+              VStack(alignment: .leading, spacing: 5) {
               WebImage(url: URL(string: BeforeDetail.flagImageURI))
                   
                 .resizable()
@@ -60,7 +60,7 @@ struct DetailView: View {
         Image(systemName: favorites.contains(countryCode) ? "star.fill" : "star").foregroundColor(.black)
       }
     }.buttonStyle(BorderlessButtonStyle()).labelStyle(.automatic)
-          .padding(.horizontal, 7)
+          .padding(.horizontal, 5)
   }
 }
 

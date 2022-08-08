@@ -18,6 +18,7 @@ struct FavoritesView: View {
   var body: some View {
     VStack{
       if countries?.data == nil {
+        Spacer()
         ProgressView()
       } else {
         NavigationView {
@@ -36,7 +37,6 @@ struct FavoritesView: View {
         }
     }
         }
-        
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .listStyle(PlainListStyle())
         .navigationBarTitle("Countries")

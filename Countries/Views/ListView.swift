@@ -29,15 +29,18 @@ struct CountryListView: View {
                     favorites.CountryToggle(country.code)
                   } label: {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
-                        .foregroundColor(.black)
+                          .foregroundColor(.black)
                   }
                         
                 }
               }
+              .navigationBarTitle("Countries")
             }.listStyle(PlainListStyle()).cornerRadius(20)
-                  .navigationBarTitle("Countries")
+            
+                  
           }
         }
+        
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
       }
     }
