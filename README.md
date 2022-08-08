@@ -1,8 +1,9 @@
 # Countries
-
+    Description
+    
   This project is based on IOS. This project's coding language is SwiftUI. This project includes a view of the Countries list and a page where you favourite what you want. That part refers to the Saved branch. The project integrated with using RapidAPI. We analyzed and controlled Data by using Postman. We found details from https://rapidapi.com/wirefreethought/api/geodb-cities/. After that we look at details of Countries from https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US.
 
-<img width="700" alt="postman" src="https://user-images.githubusercontent.com/67964948/183464035-1d88d2af-4729-4dff-86ba-963e28da4a63.png">
+<img width="800" alt="postman" src="https://user-images.githubusercontent.com/67964948/183464035-1d88d2af-4729-4dff-86ba-963e28da4a63.png">
 
 
 
