@@ -21,7 +21,7 @@
 
 - https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US.
 
-# Simulator's View
+# Simulator's Views
 ![List and Home Screen](https://user-images.githubusercontent.com/67964948/183467647-7cef838b-d171-4b8d-8176-9e5e3786de80.png)
 ![Saved Counties](https://user-images.githubusercontent.com/67964948/183467660-27244e64-77e8-4dc1-8c2d-1b6f102b09fe.png)
 ![DetailView2](https://user-images.githubusercontent.com/67964948/183467688-83a3790d-d426-41c5-881f-b93e15801136.png)
