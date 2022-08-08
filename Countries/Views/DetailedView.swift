@@ -6,46 +6,39 @@
 //
 import SwiftUI
 import SDWebImageSwiftUI
-//
 
-// SD web image package is used to get the images of the flags of the countries.
-
-
-struct DetailedView: View {
+struct DetailView: View {
   
   @ObservedObject var networkingManager = CountryService()
   @EnvironmentObject var favorites: FavoriteCountries
   @State var countryDetails: CountryDetail?
   var shouldUpdateFavorites: Binding<Bool>?
   let countryCode: String
-  
   var body: some View {
       VStack (){
       if countryDetails?.data == nil {
         ProgressView()
       } else {
         ScrollView{
-          if let unwrappedDetail = countryDetails?.data {
+          if let BeforeDetail = countryDetails?.data {
               VStack(alignment: .leading, spacing: 25) {
-              WebImage(url: URL(string: unwrappedDetail.flagImageURI))
+              WebImage(url: URL(string: BeforeDetail.flagImageURI))
                 .resizable()
                 .scaledToFit()
                 .modifier(RoundedEdge(width: 1, color: .black, cornerRadius: 0))
+            VStack{
               HStack {
-                  
                 Text("Country Code:")
-                  .fontWeight(.heavy)
-                Text(unwrappedDetail.code)
+                .fontWeight(.heavy)
+                Text(BeforeDetail.code)
                       
               }
-                
-              Link("For more information -> ", destination: URL(string: "https://www.wikidata.org/wiki/\(unwrappedDetail.wikiDataID)")!)
+                  }
+              Link("For more information -> ", destination: URL(string: "https://www.wikidata.org/wiki/\(BeforeDetail.wikiDataID)")!)
                       .padding()
-                      .background(Color.init( red: 0.1, green: 0.1, blue: 0.9))
-                          .foregroundColor(.white)
-                          .font(.title3)
-                
-               
+                      .background(Color.gray)
+                      .foregroundColor(.white)
+                      .font(.footnote)
             }
           }
         }
@@ -65,10 +58,10 @@ struct DetailedView: View {
         favorites.CountryToggle(countryCode)
       } label: {
         Image(systemName: favorites.contains(countryCode) ? "star.fill" : "star")
-              .foregroundColor(.yellow)
+              .foregroundColor(.black)
       }
     }.buttonStyle(PlainButtonStyle())
-          .padding(.horizontal, 20)
+          .padding(.horizontal, 10)
   }
 }
 

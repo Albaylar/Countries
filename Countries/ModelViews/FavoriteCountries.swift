@@ -39,9 +39,9 @@ class FavoriteCountries: ObservableObject {
       let countryIds = Array(self.CodeOfCountry)
       let data = try JSONEncoder().encode(countryIds)
       try data.write(to: fileName, options: [.atomicWrite, .completeFileProtection])
-      print("Country data saved.")
+      print("Country data saved")
     } catch {
-      print("Unable to save data.")
+      print("Unable to save data")
     }
   }
   
@@ -69,4 +69,3 @@ class FavoriteCountries: ObservableObject {
     }
   }
 }
-

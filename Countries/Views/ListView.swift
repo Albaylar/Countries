@@ -4,10 +4,11 @@
 //
 //  Created by Furkan Deniz Albaylar on 6.08.2022.
 //
-
 import SwiftUI
+import SDWebImageSwiftUI
+import SDWebImageSVGCoder
 
-struct ListView: View {
+struct CountryListView: View {
   
   @EnvironmentObject var favorites: FavoriteCountries
   @Binding var countries: Countries?
@@ -18,9 +19,9 @@ struct ListView: View {
         ProgressView()
       } else {
         NavigationView {
-          if let unWrappedData = countries?.data {
-            List(unWrappedData) { country in
-              NavigationLink(destination: DetailedView(countryCode: country.code)) {
+          if let data = countries?.data {
+            List(data) { country in
+              NavigationLink(destination: DetailView(countryCode: country.code)) {
                 HStack {
                   Text(country.name)
                   Spacer()
@@ -28,7 +29,7 @@ struct ListView: View {
                     favorites.CountryToggle(country.code)
                   } label: {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
-                          .foregroundColor(.gray)
+                          .foregroundColor(.black)
                   }.buttonStyle(PlainButtonStyle())
                         
                 }

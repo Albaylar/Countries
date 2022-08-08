@@ -23,7 +23,7 @@ struct CountryResult: Codable, Identifiable, Hashable {
   }
 }
 struct CountryDetail: Codable {
-  let data: CountryDetails
+  let data: [CountryDetails]
 }
 // DATA CALASSES
 struct CountryDetails: Codable {

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SDWebImage
+import SDWebImageSwiftUI
 import SDWebImageSVGCoder
 
 @main
