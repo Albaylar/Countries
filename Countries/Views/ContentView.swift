@@ -10,9 +10,6 @@ import SDWebImageSwiftUI
 import SDWebImageSVGCoder
 
 struct FirstView: View {
-    
-    var text : String
-    
     var body : some View {
         NavigationView{
         VStack{
@@ -21,9 +18,9 @@ struct FirstView: View {
             }
             HStack{
                 Spacer()
-                Text(text)
+                Text("text")
                     Spacer()
-            }.background(Color.gray)
+            }.background(Color.white)
         }
         }
     }
@@ -32,14 +29,9 @@ struct ContentView: View {
   @State var country: Countries?
   @ObservedObject var favorites = FavoriteCountries()
 
-    
     var body: some View {
-        
-        
-        
-        
+ 
         TabView() {
-                  
               CountryListView(countries: $country)
                   .tabItem{
                     Label("Home", systemImage: "house.fill")
@@ -51,22 +43,17 @@ struct ContentView: View {
               }.onAppear
               {
                   UITabBar.appearance().barTintColor = UIColor.gray
-                
-                  CountryService().fetchCountries { (countries ) in
+                  
+                  FetchCounty().fetchCountries { (countries ) in
                   self.country = countries
               }
 
-            }.accentColor(.black)
+              }.accentColor(.black)
               .padding()
               .environmentObject(favorites)
               .foregroundColor(Color.black)
-                  
-
           }
         }
-
-        
-        
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
@@ -76,25 +63,14 @@ struct ContentView_Previews: PreviewProvider {
 struct NewButtonStyle: ButtonStyle {
   func makeBody(configuration: Configuration) -> some View {
     Button(action: {}, label: {
-        configuration.label.foregroundColor(.white)
+        configuration.label.foregroundColor(.white).padding()
       }
     )
     .allowsHitTesting(false)
     .padding()
     .background(Color.gray.cornerRadius(8))
-    .scaleEffect(configuration.isPressed ? 1.95 : 1)
+    .scaleEffect(configuration.isPressed ? 2 : 1)
   }
 }
-struct RoundedEdge: ViewModifier {
-    let width: CGFloat
-    let color: Color
-    let cornerRadius: CGFloat
 
-    func body(content: Content) -> some View {
-        content.cornerRadius(cornerRadius - width)
-            .padding(width)
-            .background(color)
-            .cornerRadius(cornerRadius)
-    }
-}
 

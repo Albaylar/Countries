@@ -35,7 +35,7 @@ class FavoriteCountries: ObservableObject {
 
   func CountryFavSave() {
     do {
-      let fileName = getDocumentsDirectory().appendingPathComponent("SavedCountries")
+      let fileName = getDocumentsDirectory().appendingPathComponent("Saved Countries")
       let countryIds = Array(self.CodeOfCountry)
       let data = try JSONEncoder().encode(countryIds)
       try data.write(to: fileName, options: [.atomicWrite, .completeFileProtection])
@@ -51,7 +51,7 @@ class FavoriteCountries: ObservableObject {
   }
   
   func CountryFavLoad() {
-    let fileName = getDocumentsDirectory().appendingPathComponent("SavedCountries")
+    let fileName = getDocumentsDirectory().appendingPathComponent("Saved Countries")
     do {
       let data = try Data(contentsOf: fileName)
       let countryIds = try JSONDecoder().decode([String].self, from: data)

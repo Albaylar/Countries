@@ -36,6 +36,7 @@ struct FavoritesView: View {
         }
     }
         }
+        
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .listStyle(PlainListStyle())
         .navigationBarTitle("Countries")

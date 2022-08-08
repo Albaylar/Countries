@@ -4,7 +4,6 @@
 //
 //  Created by Furkan Deniz Albaylar on 6.08.2022.
 //
-
 import SwiftUI
 import SDWebImageSwiftUI
 import SDWebImageSVGCoder

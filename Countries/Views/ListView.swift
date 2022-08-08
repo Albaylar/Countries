@@ -9,7 +9,6 @@ import SDWebImageSwiftUI
 import SDWebImageSVGCoder
 
 struct CountryListView: View {
-  
   @EnvironmentObject var favorites: FavoriteCountries
   @Binding var countries: Countries?
   
@@ -20,7 +19,8 @@ struct CountryListView: View {
       } else {
         NavigationView {
           if let data = countries?.data {
-            List(data) { country in
+            
+              List(data) { country in
               NavigationLink(destination: DetailView(countryCode: country.code)) {
                 HStack {
                   Text(country.name)
@@ -29,15 +29,16 @@ struct CountryListView: View {
                     favorites.CountryToggle(country.code)
                   } label: {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
-                          .foregroundColor(.black)
-                  }.buttonStyle(PlainButtonStyle())
+                        .foregroundColor(.black)
+                  }
                         
                 }
               }
-            }.listStyle(PlainListStyle())
-              .navigationBarTitle("Countries")
+            }.listStyle(PlainListStyle()).cornerRadius(20)
+                  .navigationBarTitle("Countries")
           }
         }
+        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
       }
     }
   }
