@@ -18,7 +18,7 @@ struct FirstView: View {
             }
             HStack{
                 Spacer()
-                Text("text")
+                Text("textg")
                     Spacer()
             }.background(Color.white)
         }
