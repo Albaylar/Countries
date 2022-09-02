@@ -56,7 +56,7 @@ struct DetailView: View {
       Button{
         favorites.CountryToggle(countryCode)
       } label: {
-        Image(systemName: favorites.contains(countryCode) ? "star.fill" : "star").foregroundColor(.black)
+        Image(systemName: favorites.contains(countryCode) ? "star.fill" : "star").foregroundColor(.blue)
       }
     }.buttonStyle(BorderlessButtonStyle()).labelStyle(.automatic)
           .padding(.horizontal, 5)
