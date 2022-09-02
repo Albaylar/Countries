@@ -27,7 +27,7 @@ class FetchCounty : ObservableObject{
         do {
           if let data = data {
             let result = try JSONDecoder().decode(Countries.self, from: data)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
               completion(result)
             }
           } else

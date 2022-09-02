@@ -21,9 +21,8 @@ struct DetailView: View {
       } else {
         ScrollView{
           if let BeforeDetail = countryDetails?.data {
-              VStack(alignment: .leading, spacing: 5) {
+              VStack(alignment: .leading, spacing: 20) {
               WebImage(url: URL(string: BeforeDetail.flagImageURI))
-                  
                 .resizable()
                 .scaledToFit()
             VStack{

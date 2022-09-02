@@ -19,29 +19,29 @@ struct CountryListView: View {
       } else {
         NavigationView {
           if let data = countries?.data {
-            
               List(data) { country in
               NavigationLink(destination: DetailView(countryCode: country.code)) {
                 HStack {
+                Image(country.code)
                   Text(country.name)
                   Spacer()
                   Button {
                     favorites.CountryToggle(country.code)
                   } label: {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
-                          .foregroundColor(.black)
+                          .foregroundColor(.blue)
                   }
                         
                 }
               }
               .navigationBarTitle("Countries")
-            }.listStyle(PlainListStyle()).cornerRadius(20)
+            }.listStyle(PlainListStyle()).cornerRadius(30)
             
                   
           }
         }
         
-        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .padding(.all)
       }
     }
   }

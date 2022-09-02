@@ -63,9 +63,9 @@ class FavoriteCountries: ObservableObject {
   
   func CountryToggle(_ countryCode: String) {
     if self.contains(countryCode) {
-      self.CountryFavRemove(countryCode)
+        self.CountryFavRemove(countryCode)
     } else {
-      self.CountryFavAdd(countryCode)
+        self.CountryFavAdd(countryCode)
     }
   }
 }

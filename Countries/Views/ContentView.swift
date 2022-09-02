@@ -9,28 +9,11 @@ import SwiftUI
 import SDWebImageSwiftUI
 import SDWebImageSVGCoder
 
-struct FirstView: View {
-    var body : some View {
-        NavigationView{
-        VStack{
-            HStack {
-                Spacer()
-            }
-            HStack{
-                Spacer()
-                Text("textg")
-                    Spacer()
-            }.background(Color.white)
-        }
-        }
-    }
-}
 struct ContentView: View {
   @State var country: Countries?
   @ObservedObject var favorites = FavoriteCountries()
 
     var body: some View {
- 
         TabView() {
               CountryListView(countries: $country)
                   .tabItem{
@@ -47,9 +30,8 @@ struct ContentView: View {
                   FetchCounty().fetchCountries { (countries ) in
                   self.country = countries
               }
-
-              }.accentColor(.black)
-              .padding()
+              }
+              .accentColor(.black)
               .environmentObject(favorites)
               .foregroundColor(Color.black)
           }
@@ -63,12 +45,14 @@ struct ContentView_Previews: PreviewProvider {
 struct NewButtonStyle: ButtonStyle {
   func makeBody(configuration: Configuration) -> some View {
     Button(action: {}, label: {
-        configuration.label.foregroundColor(.white).padding()
+        configuration.label
+            .foregroundColor(.white)
+            .padding()
       }
     )
     .allowsHitTesting(false)
     .padding()
-    .background(Color.gray.cornerRadius(8))
+    .background(Color.gray.cornerRadius(10))
     .scaleEffect(configuration.isPressed ? 2 : 1)
   }
 }

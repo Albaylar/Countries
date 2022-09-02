@@ -70,6 +70,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6938F07E28C212C100541613 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				699F92F0289E35D6004CE8B9 /* CountriesApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		6975BD2F289E6A7100B4CE2D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +85,6 @@
 				699F930B289E4353004CE8B9 /* FavoritesView.swift */,
 				699F930D289E43AF004CE8B9 /* DetailedView.swift */,
 				699F930F289E4451004CE8B9 /* ListView.swift */,
-				699F92F0289E35D6004CE8B9 /* CountriesApp.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,6 +110,7 @@
 		699F92EF289E35D6004CE8B9 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				6938F07E28C212C100541613 /* App */,
 				6975BD2F289E6A7100B4CE2D /* Views */,
 				6934AD3628A114F3006F50B7 /* Model */,
 				699F9303289E3C70004CE8B9 /* ModelViews */,
