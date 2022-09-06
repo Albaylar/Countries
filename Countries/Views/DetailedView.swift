@@ -21,7 +21,7 @@ struct DetailView: View {
       } else {
         ScrollView{
           if let BeforeDetail = countryDetails?.data {
-              VStack(alignment: .leading, spacing: 20) {
+              VStack(alignment: .leading, spacing: 25) {
               WebImage(url: URL(string: BeforeDetail.flagImageURI))
                 .resizable()
                 .scaledToFit()
@@ -33,10 +33,12 @@ struct DetailView: View {
               }
                   }
               Link("For more information -> ", destination: URL(string: "https://www.wikidata.org/wiki/\(BeforeDetail.wikiDataID)")!)
+                      .buttonStyle(RoundedRectangleButtonStyle())
                       .padding()
                       .background(Color.gray)
                       .foregroundColor(.white)
                       .font(.subheadline)
+
             }
           }
         }

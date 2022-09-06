@@ -25,7 +25,7 @@ struct CountryListView: View {
                 HStack {
                 Image(country.code)
                   Text(country.name)
-                  Spacer()
+                    Spacer()
                   Button {
                       favorites.CountryToggle(country.code)
                   } label: {

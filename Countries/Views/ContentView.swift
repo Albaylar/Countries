@@ -42,3 +42,16 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct RoundedRectangleButtonStyle: ButtonStyle {
+  func makeBody(configuration: Configuration) -> some View {
+    HStack {
+      Spacer()
+      configuration.label.foregroundColor(.white)
+      Spacer()
+    }
+    .padding()
+    .background(Color.gray.cornerRadius(20))
+    .scaleEffect(configuration.isPressed ? 0.95 : 1)
+  }
+}
