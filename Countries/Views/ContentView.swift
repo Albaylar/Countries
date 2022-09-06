@@ -25,7 +25,6 @@ struct ContentView: View {
                 }
               }.onAppear
               {
-                  UITabBar.appearance().barTintColor = UIColor.gray
                   
                   FetchCounty().fetchCountries { (countries ) in
                   self.country = countries
@@ -33,28 +32,13 @@ struct ContentView: View {
               }
               .accentColor(.black)
               .environmentObject(favorites)
-              .foregroundColor(Color.black)
-          }
+              .foregroundColor(.black)
         }
+    }
+
+        
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
-struct NewButtonStyle: ButtonStyle {
-  func makeBody(configuration: Configuration) -> some View {
-    Button(action: {}, label: {
-        configuration.label
-            .foregroundColor(.white)
-            .padding()
-      }
-    )
-    .allowsHitTesting(false)
-    .padding()
-    .background(Color.gray.cornerRadius(10))
-    .scaleEffect(configuration.isPressed ? 2 : 1)
-  }
-}
-
-

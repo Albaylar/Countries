@@ -5,7 +5,10 @@
 //  Created by Furkan Deniz Albaylar on 6.08.2022.
 //
 
+import Foundation
 import SwiftUI
+import SDWebImage
+import SDWebImageSVGCoder
 
 class FavoriteCountries: ObservableObject {
   var CodeOfCountry: Set<String>

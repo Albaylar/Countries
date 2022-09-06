@@ -11,7 +11,7 @@ import SDWebImageSVGCoder
 @main
 struct CountriesApp: App {
     init() {
-      setUpDependencies()
+      setUpDependencies() // // Initialize SVGCoder
     }
     
     var body: some Scene {
@@ -20,6 +20,9 @@ struct CountriesApp: App {
         }
     }
 }
+
+// Initialize SVGCoder
+
 private extension CountriesApp {
   func setUpDependencies() {
     SDImageCodersManager.shared.addCoder(SDImageSVGCoder.shared)

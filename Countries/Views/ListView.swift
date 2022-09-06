@@ -4,8 +4,9 @@
 //
 //  Created by Furkan Deniz Albaylar on 6.08.2022.
 //
+import Foundation
 import SwiftUI
-import SDWebImageSwiftUI
+import SDWebImage
 import SDWebImageSVGCoder
 
 struct CountryListView: View {
@@ -26,7 +27,7 @@ struct CountryListView: View {
                   Text(country.name)
                   Spacer()
                   Button {
-                    favorites.CountryToggle(country.code)
+                      favorites.CountryToggle(country.code)
                   } label: {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
                           .foregroundColor(.black)

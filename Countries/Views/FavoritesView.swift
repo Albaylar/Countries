@@ -26,13 +26,13 @@ struct FavoritesView: View {
         List(data.filter({localFavorites.contains($0.code)})) { country in
         NavigationLink(destination: DetailView(shouldUpdateFavorites: $shouldUpdateFavorites, countryCode: country.code)) {
             HStack {
-            Text(country.name)
-            Spacer()
+                Text(country.name)
+                Spacer()
             Button {
-            favorites.CountryToggle(country.code)
-            self.localFavorites = favorites.CodeOfCountry
+                favorites.CountryToggle(country.code)
+                self.localFavorites = favorites.CodeOfCountry
           } label: {
-            Image(systemName: favorites.contains(country.code) ? "star.fill" : "star").foregroundColor(.black)
+              Image(systemName: favorites.contains(country.code) ? "star.fill" : "star").foregroundColor(.black)
             }.buttonStyle(PlainButtonStyle())
         }
     }

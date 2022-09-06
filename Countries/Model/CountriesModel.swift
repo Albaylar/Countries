@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import SDWebImage
+import SDWebImageSVGCoder
 
 struct Countries: Codable {
   let data: [CountryResult]
