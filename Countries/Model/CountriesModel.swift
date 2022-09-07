@@ -28,7 +28,7 @@ struct CountryDetails: Codable {
   let flagImageURI: String
   let wikiDataID: String
   
-  private enum CodingKeys: String, CodingKey {
+private enum CodingKeys: String, CodingKey {
     case wikiDataID = "wikiDataId"
     case flagImageURI = "flagImageUri"
     case name,code

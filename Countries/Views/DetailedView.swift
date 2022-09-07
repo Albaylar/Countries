@@ -8,7 +8,6 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct DetailView: View {
-  
   @ObservedObject var networkingManager = FetchCountryDetails()
   @EnvironmentObject var favorites: FavoriteCountries
   @State var countryDetails: CountryDetail?
@@ -33,7 +32,6 @@ struct DetailView: View {
               }
                   }
               Link("For more information -> ", destination: URL(string: "https://www.wikidata.org/wiki/\(BeforeDetail.wikiDataID)")!)
-                      .buttonStyle(RoundedRectangleButtonStyle())
                       .padding()
                       .background(Color.gray)
                       .foregroundColor(.white)
@@ -42,6 +40,7 @@ struct DetailView: View {
             }
           }
         }
+        .padding(.all)
       }
     }
     .onAppear{
@@ -51,7 +50,6 @@ struct DetailView: View {
     }.onDisappear{
       self.shouldUpdateFavorites?.wrappedValue = true
     }
-      
     .navigationTitle(countryDetails?.data.name ?? "")
     .navigationBarTitleDisplayMode(.inline)
     .toolbar {

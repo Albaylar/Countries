@@ -83,8 +83,8 @@
 			children = (
 				699F92F2289E35D6004CE8B9 /* ContentView.swift */,
 				699F930B289E4353004CE8B9 /* FavoritesView.swift */,
-				699F930D289E43AF004CE8B9 /* DetailedView.swift */,
 				699F930F289E4451004CE8B9 /* ListView.swift */,
+				699F930D289E43AF004CE8B9 /* DetailedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
