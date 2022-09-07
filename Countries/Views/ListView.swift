@@ -16,33 +16,30 @@ struct CountryListView: View {
   var body: some View {
     VStack{
       if countries?.data == nil {
+        Spacer()
         ProgressView()
       } else {
-        NavigationView {
-          if let data = countries?.data {
-              List(data) { country in
-              NavigationLink(destination: DetailView(countryCode: country.code)) {
+        NavigationView{
+        if let data = countries?.data {
+        List(data) { country in
+            NavigationLink(destination: DetailView(countryCode: country.code)) {
                 HStack {
-                Image(country.code)
                   Text(country.name)
                     Spacer()
                   Button {
                       favorites.CountryToggle(country.code)
                   } label: {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
-                          .foregroundColor(.gray)
-                  }
-                        
+                          .foregroundColor(.black)
+                  }.buttonStyle(PlainButtonStyle())
                 }
               }
-              .navigationBarTitle("Countries")
-            }.listStyle(PlainListStyle()).cornerRadius(30)
-            
-                  
+            .padding(.all)
+            .navigationBarTitle("Countries")
+            .listStyle(PlainListStyle()).cornerRadius(30)
+            }
           }
         }
-        
-        .padding(.all)
       }
     }
   }

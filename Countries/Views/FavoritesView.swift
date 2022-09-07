@@ -32,14 +32,15 @@ struct FavoritesView: View {
                 favorites.CountryToggle(country.code)
                 self.localFavorites = favorites.CodeOfCountry
           } label: {
-              Image(systemName: favorites.contains(country.code) ? "star.fill" : "star").foregroundColor(.black)
+              Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
+                  .foregroundColor(.black)
             }.buttonStyle(PlainButtonStyle())
         }
     }
         }
-        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        .listStyle(PlainListStyle())
+        .padding(.all)
         .navigationBarTitle("Countries")
+        .listStyle(PlainListStyle()).cornerRadius(30)
 }
         }.onAppear{
           self.localFavorites = favorites.CodeOfCountry
