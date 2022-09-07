@@ -37,10 +37,11 @@ struct FavoritesView: View {
             }.buttonStyle(PlainButtonStyle())
         }
     }
-        }
         .padding(.all)
-        .navigationBarTitle("Countries")
-        .listStyle(PlainListStyle()).cornerRadius(30)
+                .navigationBarTitle("Countries")
+                .listStyle(PlainListStyle()).cornerRadius(30)
+        }
+        
 }
         }.onAppear{
           self.localFavorites = favorites.CodeOfCountry
