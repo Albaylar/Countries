@@ -30,7 +30,7 @@ struct CountryListView: View {
                       favorites.CountryToggle(country.code)
                   } label: {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
-                          .foregroundColor(.black)
+                          .foregroundColor(.gray)
                   }
                         
                 }
