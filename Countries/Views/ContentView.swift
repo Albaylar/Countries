@@ -23,9 +23,9 @@ struct ContentView: View {
                 .tabItem{
                     Label("Saved", systemImage: "heart.fill")
                 }
-              }.onAppear
+              }
+        .onAppear
               {
-                  
                   FetchCounty().fetchCountries { (countries ) in
                   self.country = countries
               }
@@ -51,7 +51,7 @@ struct RoundedRectangleButtonStyle: ButtonStyle {
       Spacer()
     }
     .padding()
-    .background(Color.black.cornerRadius(20))
+    .background(Color.blue.cornerRadius(20))
     .scaleEffect(configuration.isPressed ? 0.95 : 1)
   }
 }

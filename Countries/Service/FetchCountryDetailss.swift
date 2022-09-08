@@ -7,8 +7,6 @@
 
 import Foundation
 import SwiftUI
-import SDWebImage
-import SDWebImageSVGCoder
 
 class FetchCountryDetails : ObservableObject{
     func fetchCountryDetails(countryCode: String, completion: @escaping (CountryDetail) -> ()) {
@@ -28,11 +26,11 @@ class FetchCountryDetails : ObservableObject{
               completion(result)
             }
           } else {
-            print("There is no Detail data")
+            print("There is no Detail of data")
           }
         }
         catch(let error) {
-          debugPrint(error)
+        debugPrint(error)
         }
       }).resume()
     }

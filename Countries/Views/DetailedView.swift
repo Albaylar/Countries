@@ -24,6 +24,7 @@ struct DetailView: View {
               WebImage(url: URL(string: BeforeDetail.flagImageURI))
                 .resizable()
                 .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             VStack{
               HStack {
                 Text("Country Code:")
@@ -36,7 +37,6 @@ struct DetailView: View {
                       .background(Color.gray)
                       .foregroundColor(.white)
                       .font(.subheadline)
-
             }
           }
         }

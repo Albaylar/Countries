@@ -6,8 +6,6 @@
 //
 import Foundation
 import SwiftUI
-import SDWebImage
-import SDWebImageSVGCoder
 
 struct CountryListView: View {
   @EnvironmentObject var favorites: FavoriteCountries
@@ -36,6 +34,7 @@ struct CountryListView: View {
               }
             .padding(.all)
             .navigationBarTitle("Countries")
+            .font(.subheadline)
             .listStyle(PlainListStyle()).cornerRadius(30)
             }
           }
