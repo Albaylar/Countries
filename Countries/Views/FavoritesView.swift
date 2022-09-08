@@ -15,6 +15,7 @@ struct FavoritesView: View {
   
   var body: some View {
     VStack{
+        HStack{
       if countries?.data == nil {
         Spacer()
         ProgressView()
@@ -53,4 +54,5 @@ struct FavoritesView: View {
       }
     }
   }
+}
 }
