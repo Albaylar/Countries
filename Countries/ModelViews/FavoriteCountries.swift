@@ -7,8 +7,6 @@
 
 import Foundation
 import SwiftUI
-import SDWebImage
-import SDWebImageSVGCoder
 
 class FavoriteCountries: ObservableObject {
   var CodeOfCountry: Set<String>
@@ -42,7 +40,7 @@ class FavoriteCountries: ObservableObject {
       let countryIds = Array(self.CodeOfCountry)
       let data = try JSONEncoder().encode(countryIds)
       try data.write(to: fileName, options: [.atomicWrite, .completeFileProtection])
-      print("Country data saved")
+      print("Country data saved or removed")
     } catch {
       print("Unable to save data")
     }

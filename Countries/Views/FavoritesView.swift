@@ -5,8 +5,6 @@
 //  Created by Furkan Deniz Albaylar on 6.08.2022.
 //
 import SwiftUI
-import SDWebImageSwiftUI
-import SDWebImageSVGCoder
 
 struct FavoritesView: View {
   
@@ -24,21 +22,22 @@ struct FavoritesView: View {
         NavigationView {
         if let data = countries?.data {
         List(data.filter({localFavorites.contains($0.code)})) { country in
-        NavigationLink(destination: DetailView(shouldUpdateFavorites: $shouldUpdateFavorites, countryCode: country.code)) {
-            HStack {
-                Text(country.name)
-                Spacer()
-            Button {
-                favorites.CountryToggle(country.code)
-                self.localFavorites = favorites.CodeOfCountry
-          } label: {
-              Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
-                  .foregroundColor(.black)
-            }.buttonStyle(PlainButtonStyle())
-        }
-    }
-        .padding(.all)
-                .navigationBarTitle("Countries")
+            NavigationLink(destination: DetailView(shouldUpdateFavorites: $shouldUpdateFavorites, countryCode: country.code)) {
+                    HStack {
+                        Text(country.name)
+                        Spacer()
+                        Button {
+                            favorites.CountryToggle(country.code)
+                            self.localFavorites = favorites.CodeOfCountry
+                        } label: {
+                            Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
+                                .foregroundColor(.black)
+                        }.buttonStyle(PlainButtonStyle())
+                    }
+                }
+                .padding(.all)
+                .navigationBarTitle("Favorites Countries")
+                .font(.subheadline)
                 .listStyle(PlainListStyle()).cornerRadius(30)
         }
         
@@ -55,4 +54,3 @@ struct FavoritesView: View {
     }
   }
 }
-

@@ -7,8 +7,7 @@
 
 
 import SwiftUI
-import SDWebImage
-import SDWebImageSVGCoder
+
 //ApıKEY and HOST
 struct Constants {
     static let host = "wft-geo-db.p.rapidapi.com"

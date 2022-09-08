@@ -7,8 +7,6 @@
 
 import Foundation
 import SwiftUI
-import SDWebImage
-import SDWebImageSVGCoder
 
 class FetchCounty : ObservableObject{
     func fetchCountries(completion:@escaping (Countries) -> ()) {
@@ -27,11 +25,10 @@ class FetchCounty : ObservableObject{
         do {
           if let data = data {
             let result = try JSONDecoder().decode(Countries.self, from: data)
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
+            DispatchQueue.main.asyncAfter(deadline:.now()) {
               completion(result)
             }
           } else
-            
             {
             print("There is no country Data")
           }
