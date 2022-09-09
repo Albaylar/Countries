@@ -37,9 +37,13 @@ struct FavoritesView: View {
                     }
                 }
                 .padding(.all)
-                .navigationBarTitle("Favorites Countries")
+                .navigationBarTitle(" Saved Countries ")
+                .navigationBarTitleDisplayMode(.large)
                 .font(.subheadline)
                 .listStyle(PlainListStyle()).cornerRadius(30)
+                .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(.black, lineWidth: 4))
         }
         
 }

@@ -31,7 +31,7 @@ struct DetailView: View {
                 .fontWeight(.heavy)
                 Text(BeforeDetail.code)
               }
-                  }
+            }
               Link("For more information -> ", destination: URL(string: "https://www.wikidata.org/wiki/\(BeforeDetail.wikiDataID)")!)
                       .padding()
                       .background(Color.gray)
