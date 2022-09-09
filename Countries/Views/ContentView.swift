@@ -16,6 +16,7 @@ struct ContentView: View {
     var body: some View {
         TabView() {
               CountryListView(countries: $country)
+            
                   .tabItem{
                     Label("Home", systemImage: "house.fill")
                 }
@@ -30,7 +31,7 @@ struct ContentView: View {
                   self.country = countries
               }
               }
-              .accentColor(.black)
+              .accentColor(.blue)
               .environmentObject(favorites)
               .foregroundColor(.black)
         }
@@ -43,7 +44,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct RoundedRectangleButtonStyle: ButtonStyle {
+struct CellButton: ButtonStyle {
   func makeBody(configuration: Configuration) -> some View {
     HStack {
       Spacer()
@@ -51,7 +52,9 @@ struct RoundedRectangleButtonStyle: ButtonStyle {
       Spacer()
     }
     .padding()
-    .background(Color.blue.cornerRadius(20))
+    .foregroundColor(.green)
+    .background(Color.white)
+    .clipShape(RoundedRectangle(cornerRadius: 20))
     .scaleEffect(configuration.isPressed ? 0.95 : 1)
   }
 }

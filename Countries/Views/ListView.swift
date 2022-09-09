@@ -10,12 +10,13 @@ import SwiftUI
 struct CountryListView: View {
   @EnvironmentObject var favorites: FavoriteCountries
   @Binding var countries: Countries?
-  
+
   var body: some View {
     VStack{
       if countries?.data == nil {
         Spacer()
         ProgressView()
+        Spacer()
       } else {
         NavigationView{
         if let data = countries?.data {
@@ -30,15 +31,21 @@ struct CountryListView: View {
                     Image(systemName: favorites.contains(country.code) ? "star.fill" : "star")
                           .foregroundColor(.black)
                   }.buttonStyle(PlainButtonStyle())
+                        
                 }
               }
             .padding(.all)
             .navigationBarTitle("Countries")
             .font(.subheadline)
-            .listStyle(PlainListStyle()).cornerRadius(30)
+            .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(.black, lineWidth: 4)
+                )
+            
             }
+        .listStyle(SidebarListStyle()).cornerRadius(20)
           }
-        }
+        }.padding()
       }
     }
   }
