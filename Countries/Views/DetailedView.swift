@@ -34,7 +34,7 @@ struct DetailView: View {
             }
               Link("For more information -> ", destination: URL(string: "https://www.wikidata.org/wiki/\(BeforeDetail.wikiDataID)")!)
                       .padding()
-                      .background(Color.gray)
+                      .background(Color.init(red: 0, green: 0, blue: 1))
                       .foregroundColor(.white)
                       .font(.subheadline)
             }

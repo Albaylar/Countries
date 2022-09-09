@@ -19,6 +19,7 @@ struct FavoritesView: View {
       if countries?.data == nil {
         Spacer()
         ProgressView()
+        Spacer()
       } else {
         NavigationView {
         if let data = countries?.data {
@@ -37,12 +38,12 @@ struct FavoritesView: View {
                     }
                 }
                 .padding(.all)
-                .navigationBarTitle(" Saved Countries ")
-                .navigationBarTitleDisplayMode(.large)
+                .navigationBarTitle("Countries")
+                .navigationBarTitleDisplayMode(.inline)
                 .font(.subheadline)
                 .listStyle(PlainListStyle()).cornerRadius(30)
                 .overlay(
-                        RoundedRectangle(cornerRadius: 16)
+                        RoundedRectangle(cornerRadius: 12)
                             .stroke(.black, lineWidth: 4))
         }
         

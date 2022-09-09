@@ -13,6 +13,7 @@ struct CountryListView: View {
 
   var body: some View {
     VStack{
+        HStack{
       if countries?.data == nil {
         Spacer()
         ProgressView()
@@ -32,21 +33,25 @@ struct CountryListView: View {
                           .foregroundColor(.black)
                   }.buttonStyle(PlainButtonStyle())
                         
+                        
                 }
               }
             .padding(.all)
             .navigationBarTitle("Countries")
+            .navigationBarTitleDisplayMode(.inline)
             .font(.subheadline)
+            .listStyle(PlainListStyle()).cornerRadius(30)
             .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(.black, lineWidth: 4)
-                )
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(.black, lineWidth: 4))
+                
             
             }
-        .listStyle(SidebarListStyle()).cornerRadius(20)
+        
           }
-        }.padding()
+        }
       }
     }
   }
+}
 }
